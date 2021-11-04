@@ -24,43 +24,46 @@
  * @param n the number to check its digits
  * @returns the digits count
  */
-uint64_t finding_number_of_digits_in_a_number(uint64_t n) {
-    uint64_t count = 0;  ///< the variable used for the digits count
-
-    // iterate until `n` becomes 0
-    // remove last digit from `n` in each iteration
-    // increase `count` by 1 in each iteration
-    while (n != 0) {
-        // we can also use `n = n / 10`
-        n /= 10;
-        // each time the loop is running, `count` will be incremented by 1.
-        ++count;
-    }
-
-    return count;
+uint64_t finding_number_of_digits_in_a_number(uint64_t n)
+{
+  uint64_t count = 0;  ///< the variable used for the digits count
+  
+  // iterate until `n` becomes 0
+  // remove last digit from `n` in each iteration
+  // increase `count` by 1 in each iteration
+  while (n != 0)
+  {
+    // we can also use `n = n / 10`
+    n /= 10;
+    // each time the loop is running, `count` will be incremented by 1.
+    ++count;
+  }
+  
+  return count;
 }
 
 /**
  * @brief Self-test implementations
  * @returns void
  */
-static void test() {
-    assert(finding_number_of_digits_in_a_number(5492) == 4);
-    assert(finding_number_of_digits_in_a_number(-0) == 0);
-    assert(finding_number_of_digits_in_a_number(10000) == 5);
-    assert(finding_number_of_digits_in_a_number(9) == 1);
-    assert(finding_number_of_digits_in_a_number(100000) == 6);
-    assert(finding_number_of_digits_in_a_number(13) == 2);
-    assert(finding_number_of_digits_in_a_number(564) == 3);
-
-    std::cout << "All tests have successfully passed!\n";
+static void test()
+{
+  assert(finding_number_of_digits_in_a_number(5492) == 4);
+  assert(finding_number_of_digits_in_a_number(-0) == 0);
+  assert(finding_number_of_digits_in_a_number(10000) == 5);
+  assert(finding_number_of_digits_in_a_number(9) == 1);
+  assert(finding_number_of_digits_in_a_number(100000) == 6);
+  assert(finding_number_of_digits_in_a_number(13) == 2);
+  assert(finding_number_of_digits_in_a_number(564) == 3);
+  std::cout << "All tests have successfully passed!\n";
 }
 
 /**
  * @brief Main function
  * @returns 0 on exit
  */
-int main() {
-    test();  // run self-test implementations
-    return 0;
+int main()
+{
+  test();  // run self-test implementations
+  return 0;
 }

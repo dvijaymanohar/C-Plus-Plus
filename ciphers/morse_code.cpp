@@ -19,254 +19,378 @@
 /** \namespace ciphers
  * \brief Algorithms for encryption and decryption
  */
-namespace ciphers {
-/** \namespace morse
- * \brief Functions for [Morse Code]
- * (https://en.wikipedia.org/wiki/Morse_code).
- */
-namespace morse {
-/**
- * Get the morse representation for given character.
- * @param c Character
- * @returns morse representation string of character
- */
-std::string char_to_morse(const char &c) {
-    // return corresponding morse code
-    switch (c) {
+namespace ciphers
+{
+  /** \namespace morse
+   * \brief Functions for [Morse Code]
+   * (https://en.wikipedia.org/wiki/Morse_code).
+   */
+  namespace morse
+  {
+    /**
+     * Get the morse representation for given character.
+     * @param c Character
+     * @returns morse representation string of character
+     */
+    std::string char_to_morse(const char &c)
+    {
+      // return corresponding morse code
+      switch (c)
+      {
         case 'a':
-            return ".-";
+          return ".-";
+          
         case 'b':
-            return "-...";
+          return "-...";
+          
         case 'c':
-            return "-.-.";
+          return "-.-.";
+          
         case 'd':
-            return "-..";
+          return "-..";
+          
         case 'e':
-            return ".";
+          return ".";
+          
         case 'f':
-            return "..-.";
+          return "..-.";
+          
         case 'g':
-            return "--.";
+          return "--.";
+          
         case 'h':
-            return "....";
+          return "....";
+          
         case 'i':
-            return "..";
+          return "..";
+          
         case 'j':
-            return ".---";
+          return ".---";
+          
         case 'k':
-            return "-.-";
+          return "-.-";
+          
         case 'l':
-            return ".-..";
+          return ".-..";
+          
         case 'm':
-            return "--";
+          return "--";
+          
         case 'n':
-            return "-.";
+          return "-.";
+          
         case 'o':
-            return "---";
+          return "---";
+          
         case 'p':
-            return ".--.";
+          return ".--.";
+          
         case 'q':
-            return "--.-";
+          return "--.-";
+          
         case 'r':
-            return ".-.";
+          return ".-.";
+          
         case 's':
-            return "...";
+          return "...";
+          
         case 't':
-            return "-";
+          return "-";
+          
         case 'u':
-            return "..-";
+          return "..-";
+          
         case 'v':
-            return "...-";
+          return "...-";
+          
         case 'w':
-            return ".--";
+          return ".--";
+          
         case 'x':
-            return "-..-";
+          return "-..-";
+          
         case 'y':
-            return "-.--";
+          return "-.--";
+          
         case 'z':
-            return "--..";
+          return "--..";
+          
         case '1':
-            return ".----";
+          return ".----";
+          
         case '2':
-            return "..---";
+          return "..---";
+          
         case '3':
-            return "...--";
+          return "...--";
+          
         case '4':
-            return "....-";
+          return "....-";
+          
         case '5':
-            return ".....";
+          return ".....";
+          
         case '6':
-            return "-....";
+          return "-....";
+          
         case '7':
-            return "--...";
+          return "--...";
+          
         case '8':
-            return "---..";
+          return "---..";
+          
         case '9':
-            return "----.";
+          return "----.";
+          
         case '0':
-            return "-----";
+          return "-----";
+          
         default:
-            std::cerr << "Found invalid character: " << c << ' ' << std::endl;
-            std::exit(0);
+          std::cerr << "Found invalid character: " << c << ' ' << std::endl;
+          std::exit(0);
+      }
     }
-}
-/**
- * Get character from the morse representation.
- * @param s Morse representation
- * @returns corresponding character
- */
-char morse_to_char(const std::string &s) {
-    // return corresponding character
-    if (s == ".-") {
+    /**
+     * Get character from the morse representation.
+     * @param s Morse representation
+     * @returns corresponding character
+     */
+    char morse_to_char(const std::string &s)
+    {
+      // return corresponding character
+      if (s == ".-")
+      {
         return 'a';
-    } else if (s == "-...") {
+      }
+      else if (s == "-...")
+      {
         return 'b';
-    } else if (s == "-.-.") {
+      }
+      else if (s == "-.-.")
+      {
         return 'c';
-    } else if (s == "-..") {
+      }
+      else if (s == "-..")
+      {
         return 'd';
-    } else if (s == ".") {
+      }
+      else if (s == ".")
+      {
         return 'e';
-    } else if (s == "..-.") {
+      }
+      else if (s == "..-.")
+      {
         return 'f';
-    } else if (s == "--.") {
+      }
+      else if (s == "--.")
+      {
         return 'g';
-    } else if (s == "....") {
+      }
+      else if (s == "....")
+      {
         return 'h';
-    } else if (s == "..") {
+      }
+      else if (s == "..")
+      {
         return 'i';
-    } else if (s == ".---") {
+      }
+      else if (s == ".---")
+      {
         return 'j';
-    } else if (s == "-.-") {
+      }
+      else if (s == "-.-")
+      {
         return 'k';
-    } else if (s == ".-..") {
+      }
+      else if (s == ".-..")
+      {
         return 'l';
-    } else if (s == "--") {
+      }
+      else if (s == "--")
+      {
         return 'm';
-    } else if (s == "-.") {
+      }
+      else if (s == "-.")
+      {
         return 'n';
-    } else if (s == "---") {
+      }
+      else if (s == "---")
+      {
         return 'o';
-    } else if (s == ".--.") {
+      }
+      else if (s == ".--.")
+      {
         return 'p';
-    } else if (s == "--.-") {
+      }
+      else if (s == "--.-")
+      {
         return 'q';
-    } else if (s == ".-.") {
+      }
+      else if (s == ".-.")
+      {
         return 'r';
-    } else if (s == "...") {
+      }
+      else if (s == "...")
+      {
         return 's';
-    } else if (s == "-") {
+      }
+      else if (s == "-")
+      {
         return 't';
-    } else if (s == "..-") {
+      }
+      else if (s == "..-")
+      {
         return 'u';
-    } else if (s == "...-") {
+      }
+      else if (s == "...-")
+      {
         return 'v';
-    } else if (s == ".--") {
+      }
+      else if (s == ".--")
+      {
         return 'w';
-    } else if (s == "-..-") {
+      }
+      else if (s == "-..-")
+      {
         return 'x';
-    } else if (s == "-.--") {
+      }
+      else if (s == "-.--")
+      {
         return 'y';
-    } else if (s == "--..") {
+      }
+      else if (s == "--..")
+      {
         return 'z';
-    } else if (s == ".----") {
+      }
+      else if (s == ".----")
+      {
         return '1';
-    } else if (s == "..---") {
+      }
+      else if (s == "..---")
+      {
         return '2';
-    } else if (s == "...--") {
+      }
+      else if (s == "...--")
+      {
         return '3';
-    } else if (s == "....-") {
+      }
+      else if (s == "....-")
+      {
         return '4';
-    } else if (s == ".....") {
+      }
+      else if (s == ".....")
+      {
         return '5';
-    } else if (s == "-....") {
+      }
+      else if (s == "-....")
+      {
         return '6';
-    } else if (s == "--...") {
+      }
+      else if (s == "--...")
+      {
         return '7';
-    } else if (s == "---..") {
+      }
+      else if (s == "---..")
+      {
         return '8';
-    } else if (s == "----.") {
+      }
+      else if (s == "----.")
+      {
         return '9';
-    } else if (s == "-----") {
+      }
+      else if (s == "-----")
+      {
         return '0';
-    } else {
+      }
+      else
+      {
         std::cerr << "Found invalid Morse code: " << s << ' ' << std::endl;
         std::exit(0);
+      }
     }
-}
-/**
- * Encrypt given text using morse code.
- * @param text text to be encrypted
- * @returns new encrypted text
- */
-std::string encrypt(const std::string &text) {
-    std::string encrypted_text = "";  // Empty string to store encrypted text
-    // Going through each character of text and converting it
-    // to morse representation
-    for (const char &c : text) {
+    /**
+     * Encrypt given text using morse code.
+     * @param text text to be encrypted
+     * @returns new encrypted text
+     */
+    std::string encrypt(const std::string &text)
+    {
+      std::string encrypted_text = "";  // Empty string to store encrypted text
+      
+      // Going through each character of text and converting it
+      // to morse representation
+      for (const char &c : text)
+      {
         encrypted_text += ciphers::morse::char_to_morse(c) + " ";
+      }
+      
+      return encrypted_text;  // Returning encrypted text
     }
-    return encrypted_text;  // Returning encrypted text
-}
-/**
- * Decrypt given morse coded text.
- * @param text text to be decrypted
- * @returns new decrypted text
- */
-std::string decrypt(const std::string &text) {
-    // Going through each character of text and converting it
-    // back to normal representation.
-    std::string decrypted_text = "";  // Empty string to store decrypted text
-    // Spliting string (with delimiter = " ") and storing it
-    // in vector
-    std::size_t pos_start = 0, pos_end = 0, delim_len = 1;
-    std::vector<std::string> splits;
-    while ((pos_end = text.find(' ', pos_start)) != std::string::npos) {
+    /**
+     * Decrypt given morse coded text.
+     * @param text text to be decrypted
+     * @returns new decrypted text
+     */
+    std::string decrypt(const std::string &text)
+    {
+      // Going through each character of text and converting it
+      // back to normal representation.
+      std::string decrypted_text = "";  // Empty string to store decrypted text
+      // Spliting string (with delimiter = " ") and storing it
+      // in vector
+      std::size_t pos_start = 0, pos_end = 0, delim_len = 1;
+      std::vector<std::string> splits;
+      
+      while ((pos_end = text.find(' ', pos_start)) != std::string::npos)
+      {
         std::string token = text.substr(pos_start, pos_end - pos_start);
         pos_start = pos_end + delim_len;
         splits.push_back(token);
-    }
-
-    // Traversing through each morse code string
-    for (const std::string &s : splits) {
+      }
+      
+      // Traversing through each morse code string
+      for (const std::string &s : splits)
+      {
         // Add corresponding character
         decrypted_text += ciphers::morse::morse_to_char(s);
+      }
+      
+      return decrypted_text;  // Returning decrypted text
     }
-
-    return decrypted_text;  // Returning decrypted text
-}
-}  // namespace morse
+  }  // namespace morse
 }  // namespace ciphers
 
 /**
  * @brief Function to test above algorithm
  * @returns void
  */
-static void test() {
-    // Test 1
-    std::string text1 = "01234567890";
-    std::string encrypted1 = ciphers::morse::encrypt(text1);
-    std::string decrypted1 = ciphers::morse::decrypt(encrypted1);
-    assert(text1 == decrypted1);
-    std::cout << "Original text : " << text1 << std::endl;
-    std::cout << "Encrypted text : " << encrypted1 << std::endl;
-    std::cout << "Decrypted text : " << decrypted1 << std::endl;
-    // Test 2
-    std::string text2 = "abcdefghijklmnopqrstuvwxyz";
-    std::string encrypted2 = ciphers::morse::encrypt(text2);
-    std::string decrypted2 = ciphers::morse::decrypt(encrypted2);
-    assert(text2 == decrypted2);
-    std::cout << "Original text : " << text2 << std::endl;
-    std::cout << "Encrypted text : " << encrypted2 << std::endl;
-    std::cout << "Decrypted text : " << decrypted2 << std::endl;
+static void test()
+{
+  // Test 1
+  std::string text1 = "01234567890";
+  std::string encrypted1 = ciphers::morse::encrypt(text1);
+  std::string decrypted1 = ciphers::morse::decrypt(encrypted1);
+  assert(text1 == decrypted1);
+  std::cout << "Original text : " << text1 << std::endl;
+  std::cout << "Encrypted text : " << encrypted1 << std::endl;
+  std::cout << "Decrypted text : " << decrypted1 << std::endl;
+  // Test 2
+  std::string text2 = "abcdefghijklmnopqrstuvwxyz";
+  std::string encrypted2 = ciphers::morse::encrypt(text2);
+  std::string decrypted2 = ciphers::morse::decrypt(encrypted2);
+  assert(text2 == decrypted2);
+  std::cout << "Original text : " << text2 << std::endl;
+  std::cout << "Encrypted text : " << encrypted2 << std::endl;
+  std::cout << "Decrypted text : " << decrypted2 << std::endl;
 }
 
 /**
  * @brief Main function
  * @returns 0 on exit
  */
-int main() {
-    // Testing
-    test();
-    return 0;
+int main()
+{
+  // Testing
+  test();
+  return 0;
 }

@@ -27,13 +27,15 @@
  * @namespace math
  * @brief Mathematical algorithms
  */
-namespace math {
-/**
- * @brief Function to test above algorithm
- * @param n description
- * @returns void
- */
-void power_of_two(int n) {
+namespace math
+{
+  /**
+   * @brief Function to test above algorithm
+   * @param n description
+   * @returns void
+   */
+  void power_of_two(int n)
+  {
     /**
      * This function finds whether a number is power of 2 or not
      * @param n value for which we want to check
@@ -43,24 +45,29 @@ void power_of_two(int n) {
     /// result stores the
     /// bitwise and of n and n-1
     int result = n & (n - 1);
-    if (result == 0) {
-        std::cout << "Yes, the number " << n << " is a power of 2";
-    } else {
-        std::cout << "No, the number " << n << " is not a power of 2";
+    
+    if (result == 0)
+    {
+      std::cout << "Yes, the number " << n << " is a power of 2";
     }
-}
+    else
+    {
+      std::cout << "No, the number " << n << " is not a power of 2";
+    }
+  }
 }  // namespace math
 
 /**
  * @brief Main function
  * @returns 0 on exit
  */
-int main() {
-    int n = 0;
-    /// n stores the input from the user
-    std::cout << "enter a number " << std::endl;
-    std::cin >> n;
-    /// function call with @param n
-    math::power_of_two(n);
-    return 0;
+int main()
+{
+  int n = 0;
+  /// n stores the input from the user
+  std::cout << "enter a number " << std::endl;
+  std::cin >> n;
+  /// function call with @param n
+  math::power_of_two(n);
+  return 0;
 }
